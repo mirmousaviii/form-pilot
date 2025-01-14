@@ -19,5 +19,7 @@ function fillForm(fields) {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === "fill_form") {
     fillForm(request.data);
+    console.log(request.data);
+    sendResponse({ status: "success" });
   }
 });
